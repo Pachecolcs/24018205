@@ -1,1 +1,79 @@
-rgtt5g6t
+//Correção da prova 1
+//exercicio 1 : C) 
+//exercicio 2 : B)
+//exercicio 3- 
+#include <stdio.h>
+
+int main() {
+    double fahrenheit_double;
+    int fahrenheit_int;
+
+    // Lê o valor em Fahrenheit usando double
+    printf("Digite um valor em Fahrenheit (double): ");
+    scanf("%lf", &fahrenheit_double);
+    double celsius_from_double = (fahrenheit_double - 32.0) * 5.0 / 9.0;
+    printf("Celsius (double): %.2lf\n", celsius_from_double);
+
+    // Lê o valor em Fahrenheit usando int
+    printf("Digite um valor em Fahrenheit (int): ");
+    scanf("%d", &fahrenheit_int);
+    // Aqui usamos a fórmula com int, mas devemos ter cuidado com a divisão
+    int celsius_from_int = (fahrenheit_int - 32) * 5 / 9; // Divisão inteira
+    printf("Celsius (int): %d\n", celsius_from_int);
+
+    return 0;
+}
+Prompt: Digite um valor em Fahrenheit (double) :205
+Celsius (double): 96.11
+Digite um valor em Fahrenheit (int):205
+Celsius (int):96 
+
+//Exercicio  4
+#include <stdio.h>
+
+int main() {
+    float temperatura;
+
+    // Solicita a temperatura ao usuário
+    printf("Digite a temperatura atual (em °C): ");
+    scanf("%f", &temperatura);
+
+    // Avalia a temperatura e fornece uma previsão do tempo
+    if (temperatura <= 0) {
+        printf("Geleira - Temperatura muito fria!\n");
+    } else if (temperatura > 0 && temperatura <= 15) {
+        printf("Frio - Pode precisar de um casaco!\n");
+    } else if (temperatura > 15 && temperatura <= 25) {
+        printf("Agradável - Tempo bom para sair!\n");
+    } else if (temperatura > 25 && temperatura <= 35) {
+        printf("Quente - Ótimo para um dia de praia!\n");
+    } else { // temperatura > 35
+        printf("Muito quente - Mantenha-se hidratado!\n");
+    }
+
+    return 0;
+}
+
+
+//Exercicio 5 
+#include <stdio.h>
+
+int main() {
+    float temperatura;
+
+    // Solicita a temperatura ao usuário
+    printf("Digite a temperatura atual do depósito (em °C): ");
+    scanf("%f", &temperatura);
+
+    // Classifica o nível de risco com base na temperatura
+    if (temperatura < -10) {
+        printf("Risco Baixo - Armazenamento ideal para alimentos congelados.\n");
+    } else if (temperatura >= -10 && temperatura <= 0) {
+        printf("Risco Moderado - Condições aceitáveis para armazenamento refrigerado.\n");
+    } else if ((temperatura >= 1 && temperatura <= 10) || temperatura == 15) {
+        printf("Risco Elevado - Monitore a temperatura.\n");
+    } else { // temperatura > 10 e não é 15
+        printf("Risco Crítico - Ação Imediata Necessária!\n");
+    }
+
+    return 0;
