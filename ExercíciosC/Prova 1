@@ -18,7 +18,7 @@ int main() {
     printf("Digite um valor em Fahrenheit (int): ");
     scanf("%d", &fahrenheit_int);
     // Aqui usamos a fórmula com int, mas devemos ter cuidado com a divisão
-    int celsius_from_int = (fahrenheit_int - 32) * 5 / 9; // Divisão inteira
+    int celsius_from_int = (fahrenheit_int - 32) * (5 / 9); // Divisão inteira
     printf("Celsius (int): %d\n", celsius_from_int);
 
     return 0;
@@ -27,6 +27,7 @@ Prompt: Digite um valor em Fahrenheit (double) :205
 Celsius (double): 96.11
 Digite um valor em Fahrenheit (int):205
 Celsius (int):96 
+OBS: o resultado da b) dará 0 pois ao multiplicar 5/9 da um número decimal.
 
 //Exercicio  4
 #include <stdio.h>
