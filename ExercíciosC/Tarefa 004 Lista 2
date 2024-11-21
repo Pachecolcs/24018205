@@ -1,5 +1,5 @@
-//1 Exercícios - while e Do-while
-Exercício 1
+//1 EXERCÍCIOS WHILE DO WHILE
+//Exercício 1
 #include <stdio.h>
 
 int main() {
@@ -17,3 +17,330 @@ int main() {
 
     return 0;
 }
+//
+
+//Exercício 2 
+//#include <stdio.h>
+
+int main() {
+    int combustivel;
+    do {
+        printf("Digite o nível de combustível (em %%): ");
+        scanf("%d", &combustivel);
+
+        if (combustivel < 15) {
+            printf("ALERTA: Nível de combustível abaixo de 15%%! Recarregue o veículo.\n");
+        } else if (combustivel >= 100) {
+            printf("Tanque cheio. Monitoramento encerrado.\n");
+            break;
+        } else {
+            printf("Nível de combustível: %d%%\n", combustivel);
+        }
+    } while (1);
+
+    return 0;
+}
+//
+
+// Exercício 3 
+//#include <stdio.h>
+
+int main() {
+    int passos = 0, entrada;
+    const int META = 10000;
+
+    do {
+        printf("Digite o número de passos dados: ");
+        scanf("%d", &entrada);
+        passos += entrada;
+
+        printf("Passos totais: %d\n", passos);
+        if (passos >= META) {
+            printf("Parabéns! Você atingiu ou ultrapassou a meta de %d passos.\n", META);
+            break;
+        }
+    } while (1);
+
+    return 0;
+}
+//
+
+//Exercício 4 
+//#include <stdio.h>
+
+int main() {
+    float deposito;
+    do {
+        printf("Digite o valor do depósito inicial (mínimo R$500,00): ");
+        scanf("%f", &deposito);
+
+        if (deposito < 500) {
+            printf("Erro: O valor inserido é menor que o mínimo necessário.\n");
+        } else {
+            printf("Depósito de R$%.2f aceito. Conta criada com sucesso!\n", deposito);
+            break;
+        }
+    } while (1);
+
+    return 0;
+}
+//
+
+//DESAFIO
+//#include <stdio.h>
+#include <math.h>
+
+// Função para calcular a média
+float calcularMedia(float valores[], int n) {
+    float soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += valores[i];
+    }
+    return soma / n;
+}
+
+// Função para calcular o desvio padrão
+float calcularDesvioPadrao(float valores[], int n, float media) {
+    float soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += pow(valores[i] - media, 2);
+    }
+    return sqrt(soma / n);
+}
+
+int main() {
+    int dias;
+    printf("Quantos dias deseja analisar? ");
+    scanf("%d", &dias);
+
+    float precos[dias];
+    for (int i = 0; i < dias; i++) {
+        printf("Digite o preço da ação no dia %d: ", i + 1);
+        scanf("%f", &precos[i]);
+    }
+
+    // Calculando a média e o desvio padrão
+    float media = calcularMedia(precos, dias);
+    float desvioPadrao = calcularDesvioPadrao(precos, dias, media);
+
+    printf("\nMédia dos preços: %.2f\n", media);
+    printf("Desvio padrão: %.2f%%\n", desvioPadrao);
+
+    if (desvioPadrao < 5.0) {
+        printf("Desempenho: Estável\n");
+    } else {
+        printf("Desempenho: Volátil\n");
+    }
+
+    return 0;
+}
+//
+
+//EXERCÍCIO 2 DO WHILE
+
+//Exercício 1 
+//#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char comando[10];
+    do {
+        printf("Digite o comando para o robô (frente, tras, esquerda, direita ou sair): ");
+        scanf("%s", comando);
+
+        if (strcmp(comando, "sair") == 0) {
+            printf("Programa encerrado.\n");
+            break;
+        } else if (strcmp(comando, "frente") == 0 || strcmp(comando, "tras") == 0 ||
+                   strcmp(comando, "esquerda") == 0 || strcmp(comando, "direita") == 0) {
+            printf("Movendo o robô para: %s.\n", comando);
+        } else {
+            printf("Comando inválido!\n");
+        }
+    } while (1);
+
+    return 0;
+}
+//
+
+//Exercício 2 
+//#include <stdio.h>
+
+int main() {
+    float distancia;
+    do {
+        printf("Digite a distância medida pelo sensor (em cm): ");
+        scanf("%f", &distancia);
+
+        if (distancia < 10) {
+            printf("Distância menor que 10 cm detectada. Encerrando leitura...\n");
+            break;
+        } else {
+            printf("Distância medida: %.2f cm.\n", distancia);
+        }
+    } while (1);
+
+    return 0;
+}
+//
+
+//Exercício 3 
+//#include <stdio.h>
+
+int main() {
+    int opcao;
+    do {
+        printf("\nSelecione uma ação para o robô:\n");
+        printf("1. Ligar lâmpada\n2. Tocar som\n3. Mover braço\n4. Encerrar\n");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Lâmpada ligada.\n");
+                break;
+            case 2:
+                printf("Som tocado.\n");
+                break;
+            case 3:
+                printf("Braço movido.\n");
+                break;
+            case 4:
+                printf("Encerrando programa.\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 4);
+
+    return 0;
+}
+//
+
+//Exercício 4
+//#include <stdio.h>
+
+int main() {
+    float bateria;
+    do {
+        printf("Digite o nível da bateria (em %%): ");
+        scanf("%f", &bateria);
+
+        if (bateria < 20) {
+            printf("ALERTA: Bateria baixa! Recarregue imediatamente.\n");
+        } else {
+            printf("Nível de bateria suficiente: %.2f%%\n", bateria);
+        }
+    } while (bateria < 20);
+
+    return 0;
+}
+//
+
+// Exercício 5 
+//#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char comando[10];
+    int x = 0, y = 0;
+    const int GRID = 5;
+
+    do {
+        printf("Digite o comando para mover (cima, baixo, esquerda, direita ou parar): ");
+        scanf("%s", comando);
+
+        if (strcmp(comando, "parar") == 0) {
+            printf("Navegação encerrada. Posição final: (%d, %d)\n", x, y);
+            break;
+        } else if (strcmp(comando, "cima") == 0 && y < GRID) {
+            y++;
+        } else if (strcmp(comando, "baixo") == 0 && y > 0) {
+            y--;
+        } else if (strcmp(comando, "esquerda") == 0 && x > 0) {
+            x--;
+        } else if (strcmp(comando, "direita") == 0 && x < GRID) {
+            x++;
+        } else {
+            printf("Movimento inválido!\n");
+        }
+
+        printf("Posição atual: (%d, %d)\n", x, y);
+    } while (1);
+
+    return 0;
+}
+//
+
+//DESAFIO 2 
+
+//#include <stdio.h>
+#include <stdbool.h>
+
+// Controle de Movimento
+void controleMovimento() {
+    printf("Controle de Movimento: Simulando movimentos em um espaço 10x10...\n");
+}
+
+// Leitura de Sensores
+void leituraSensores() {
+    printf("Leitura de Sensores: Lendo distância...\n");
+}
+
+// Controle de Atuação
+void controleAtuacao() {
+    printf("Controle de Atuação: Executando ações do robô...\n");
+}
+
+// Monitoramento de Bateria
+void monitoramentoBateria() {
+    printf("Monitoramento de Bateria: Verificando nível da bateria...\n");
+}
+
+// Navegação Autônoma
+void navegacaoAutonoma() {
+    printf("Navegação Autônoma: Simulando movimentos em um grid 5x5...\n");
+}
+
+int main() {
+    int opcao;
+    do {
+        printf("\nMenu Principal:\n");
+        printf("1. Controle de Movimento\n");
+        printf("2. Leitura de Sensores\n");
+        printf("3. Controle de Atuação\n");
+        printf("4. Monitoramento de Bateria\n");
+        printf("5. Navegação Autônoma\n");
+        printf("6. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                controleMovimento();
+                break;
+            case 2:
+                leituraSensores();
+                break;
+            case 3:
+                controleAtuacao();
+                break;
+            case 4:
+                monitoramentoBateria();
+                break;
+            case 5:
+                navegacaoAutonoma();
+                break;
+            case 6:
+                printf("Encerrando programa...\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+    } while (opcao != 6);
+
+    return 0;
+}
+//
+
+
+
