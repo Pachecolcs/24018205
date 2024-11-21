@@ -1,0 +1,19 @@
+//1 Exercícios - while e Do-while
+Exercício 1
+#include <stdio.h>
+
+int main() {
+    float temperatura;
+    do {
+        printf("Digite a temperatura atual (em °C): ");
+        scanf("%f", &temperatura);
+
+        if (temperatura < 20 || temperatura > 25) {
+            printf("ALERTA: Temperatura fora do intervalo seguro (20°C - 25°C)!\n");
+        } else {
+            printf("Temperatura dentro do intervalo seguro.\n");
+        }
+    } while (1); // Continua monitorando indefinidamente.
+
+    return 0;
+}
